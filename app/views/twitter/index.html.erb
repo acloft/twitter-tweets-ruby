@@ -1,14 +1,12 @@
-<h1 class="text-center"> Search for a twitter user below</h1>
-<div class='row'> 
-<div class="col"> </div>
-<div class="col-sm-6"> 
-<%= form_tag("results", method: "get") do %>
-  <%= label_tag(:search, "Search for:") %>
-  <%= text_field_tag(:search, "", {:class => 'form-control', :required=> true})%>
-  <%= submit_tag("Search", {:class => 'btn btn-primary'}) %>
-<% end %>
+<h1 class="text-center"> Search Twitter handles below:</h1>
+<div class='row justify-content-center'> 
+  <div class="col"> </div>
+  <div class="col-sm-6 col-sm-offset-3 text-center">
+  <%= form_tag("results", method: "get",  :class => "form-inline") do %>
+    <%= text_field_tag(:search, "", {:class => 'form-control', :required=> true})%>
+    <%= submit_tag("Search", {:class => 'btn btn-primary'}) %>
+  <% end %>
+   </div>
+   <div class="col"> </div>
+ 
 </div>
-<div class="col"> </div>
-</div>
-<div>
-</div> 
