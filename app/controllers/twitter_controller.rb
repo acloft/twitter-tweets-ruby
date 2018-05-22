@@ -12,6 +12,7 @@ class TwitterController < ApplicationController
         @handle = params[:search]
         if @handle && @handle.length > 0
             begin
+                @user = $twitter.user(@handle)
                 @tweets = $twitter.user_timeline(@handle)
             rescue => exception
                 @tweets = []
