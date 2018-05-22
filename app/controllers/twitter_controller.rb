@@ -3,25 +3,22 @@
 
 
 class TwitterController < ApplicationController
-    layout false
+   
     def index
-       @client = Twitter::REST::Client.new do |config|
-            config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
-            config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
-          end
-          puts @client.bearer_token
-        
+        @tweets = $twitter.search('trump')
+        #   puts  tweet.text
+        #     end
         @tweets = ["one", "two", ENV['TEST']]
         if params[:search] 
-            @tweets = ["three", "four"]
+            puts 'got here'
             render "results"
         else 
+            render 'index'
         end
 
     end
 
     def results 
-        @tweets
     end
 
 end
