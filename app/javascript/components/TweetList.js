@@ -25,7 +25,6 @@ class TweetList extends React.Component {
     });
   }
   render() {
-    console.log(this.props);
     return (
       <React.Fragment>
         {this.props.tweets && this.props.tweets.length > 0 ? (
