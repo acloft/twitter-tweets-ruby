@@ -7,4 +7,4 @@ Twitter is integrated via gem <a href="https://www.rubydoc.info/gems/twitter"> t
 React is intgrated via <a href="https://github.com/reactjs/react-rails"> react-rails</a>
 
 
-Check it out deployed on heroku <a href="https://abby-twitter-user-test.herokuapp.com/twitter/index"> here </a>
+Check it out deployed on heroku <a href="https://abby-twitter-user-test.herokuapp.com/"> here </a>
