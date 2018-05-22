@@ -15,14 +15,8 @@ class TwitterController < ApplicationController
                 @tweets = $twitter.user_timeline(@handle)
             rescue => exception
                 @tweets = []
-        else
-                
-            end
-            
-        else
-            render 'index'
-            
         end
+    end
     end
 
 end
