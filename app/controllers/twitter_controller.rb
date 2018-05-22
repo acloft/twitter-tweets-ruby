@@ -5,13 +5,13 @@
 class TwitterController < ApplicationController
    
     def index
-        @tweets = $twitter.search('trump')
+        
         #   puts  tweet.text
         #     end
         @tweets = ["one", "two", ENV['TEST']]
         if params[:search] 
-            puts 'got here'
-            render "results"
+            @tweets = $twitter.search(params[:search])
+            render "index"
         else 
             render 'index'
         end
@@ -19,6 +19,7 @@ class TwitterController < ApplicationController
     end
 
     def results 
+        @tweets = $twitter.user_timeline(params[:search] )
     end
 
 end
