@@ -4,7 +4,7 @@ class TweetList extends React.Component {
   generateTweets(tweets) {
     return tweets.map(tweet => {
       return (
-        <li key={tweet.id}>
+        <li key={tweet.id} className="list-group-item">
           <strong>{this.formatDate(tweet.created_at)}</strong> {tweet.text}{" "}
         </li>
       );
@@ -38,13 +38,18 @@ class TweetList extends React.Component {
                 @{this.props.handle}
               </a>'s recent tweets:{" "}
             </h2>
-            <ol>{this.generateTweets(this.props.tweets)}</ol>
+            <ol className="list-group">{this.generateTweets(this.props.tweets)}</ol>
           </div>
         ) : (
-          <div>
-            That was no good. Want to try a different search?{" "}
-            <a href="/twitter/index"> Back</a>
-          </div>
+          <React.Fragment>
+            <div className="text-center">
+              That was no good. Want to try a different search?{" "}
+              <a className="btn btn-warning" href="/">
+                {" "}
+                Go Back
+              </a>
+            </div>
+          </React.Fragment>
         )}
       </React.Fragment>
     );
