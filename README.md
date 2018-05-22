@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple application that allows you to enter in a twitter handle and see a list of that user's most recent tweets. Custom validation to prevent erroring out on bad or empty requests.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Using ruby v 2.4.2 and rails v 5.2.0
+Twitter is integrated via gem <a href="https://www.rubydoc.info/gems/twitter"> twitter</a> 
+React is intgrated via <a href="https://github.com/reactjs/react-rails"> react-rails</a>
