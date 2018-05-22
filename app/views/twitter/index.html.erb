@@ -1,0 +1,17 @@
+<h1 class="text-center"> Search for a twitter user below</h1>
+<div class='row'> 
+<div class="col"> </div>
+<div class="col-sm-6"> 
+<%= form_tag("results", method: "get") do %>
+  <%= label_tag(:search, "Search for:") %>
+  <%= text_field_tag(:search)%>
+  <%= submit_tag("Search") %>
+<% end %>
+</div>
+<div class="col"> </div>
+</div>
+<div>
+<% if @tweets %>
+<%= pluralize(@tweets, 'tweets'); %>
+<% end %>
+</div> 
