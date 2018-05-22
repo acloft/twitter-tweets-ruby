@@ -3,6 +3,7 @@
 
 
 class TwitterController < ApplicationController
+    http_basic_authenticate_with name: "admin", password: "supersecure", except: [:index]
    
     def index
     end
