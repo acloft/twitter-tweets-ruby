@@ -18,6 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'faraday'
 gem 'json'
+gem 'webpacker'
 gem 'react-rails'
 gem 'twitter'
 # Use CoffeeScript for .coffee assets and views

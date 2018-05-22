@@ -4,4 +4,6 @@
     <li><%= tweet.text%> </li>
 <% end %>
 </ul>
+<%= react_component('TweetList',{:tweets=> @tweets})%>
 <% end %>
+
