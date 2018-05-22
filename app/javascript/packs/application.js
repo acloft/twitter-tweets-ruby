@@ -7,5 +7,8 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 //= require components/
+var ReactRailsUJS = require("react_ujs")
 console.log('Hello World from Webpacker')
-ReactRailsUJS.mountComponents()
+ReactRailsUJS.mountComponents()// Support component names relative to this directory:
+var componentRequireContext = require.context("components", true)
+ReactRailsUJS.useContext(componentRequireContext)

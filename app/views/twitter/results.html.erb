@@ -1,9 +1,7 @@
 <% if @tweets %>
-<ul>
-<% @tweets.each do |tweet|%>
-    <li><%= tweet.text%> </li>
-<% end %>
-</ul>
-<%= react_component('TweetList',{:tweets=> @tweets})%>
+<%= react_component('TweetList',{:tweets=> @tweets, :handle => @handle})%>
+<% else %>
+<p> Looks like that didn't work, would you like to go back and try again?</p>
+ <%= link_to 'Back', twitter_index_url  %>
 <% end %>
 

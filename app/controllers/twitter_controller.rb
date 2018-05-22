@@ -5,21 +5,23 @@
 class TwitterController < ApplicationController
    
     def index
-        
-        #   puts  tweet.text
-        #     end
-        @tweets = ["one", "two", ENV['TEST']]
-        if params[:search] 
-            @tweets = $twitter.search(params[:search])
-            render "index"
-        else 
-            render 'index'
-        end
-
     end
 
     def results 
-        @tweets = $twitter.user_timeline(params[:search] )
+        @handle = params[:search]
+        if @handle && @handle.length > 0
+            begin
+                @tweets = $twitter.user_timeline(@handle)
+            rescue => exception
+                @tweets = []
+        else
+                
+            end
+            
+        else
+            render 'index'
+            
+        end
     end
 
 end
