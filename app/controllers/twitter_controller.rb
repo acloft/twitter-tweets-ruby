@@ -22,8 +22,4 @@ class TwitterController < ApplicationController
         end
     end
     end
-
-    private def cleanUpSearchInput
-    end
-
 end
