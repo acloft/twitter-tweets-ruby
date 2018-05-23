@@ -17,6 +17,7 @@ class TweetList extends React.Component {
     const parsedText = textArr.reduce((all, word, index) => {
       let checkedWord = word;
       var pattern = /\B@[a-z0-9_-]+/gi;
+      //https://stackoverflow.com/questions/15265605/how-to-pull-mentions-out-of-strings-like-twitter-in-javascript 
       if (word.match(pattern)) {
         checkedWord = `<a href="/results?utf8=✓&search=${word}&commit=Search">${word}</a>`;
       }
