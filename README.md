@@ -1,6 +1,6 @@
 # README
 
-This is an application built with Ruby on Rails and React that allows the user to search twitter handles and displays a list of that user's most recent tweets. I provided some custom validation to prevent it from erroring out on bad or empty requests. The display list is a React component and I brought in Bootstrap 4 for styling. Mentions in tweets will link to those user pages, the regular expression was not 100% accurate so I added extra logic in the controller". Finally, I utilized RoR authentication in the controller for all search requests (username: 'admin', password: 'supersecure'). 
+This is an application built with Ruby on Rails and React that allows the user to search twitter handles and displays a list of that user's most recent tweets. I provided some custom validation to prevent it from erroring out on bad or empty requests. The display list is a React component and I brought in Bootstrap 4 for styling. Mentions in tweets will link to those user pages, the regular expression is not 100% accurate so as a work around I have extra logic in the controller to remove characters that shouldn't be there. Finally, I utilized RoR authentication in the controller for all search requests (username: 'admin', password: 'supersecure'). 
 
 Using ruby v 2.4.2 and rails v 5.2.0
 Twitter is integrated via gem <a href="https://www.rubydoc.info/gems/twitter"> twitter</a> 
