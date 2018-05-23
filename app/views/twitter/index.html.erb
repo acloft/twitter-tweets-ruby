@@ -6,7 +6,10 @@
     <%= text_field_tag(:search, "", {:class => 'form-control', :required=> true})%>
     <%= submit_tag("Search", {:class => 'btn btn-primary'}) %>
   <% end %>
-   </div>
+  <%= link_to 'Surprise Me!', {:controller => "twitter", :action => "results", :search   => @surprise}, {:class => 'btn'} %> 
+  </div>
    <div class="col"> </div>
- 
 </div>
+
+
+
