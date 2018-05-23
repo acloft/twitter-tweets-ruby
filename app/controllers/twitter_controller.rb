@@ -6,6 +6,9 @@ class TwitterController < ApplicationController
     http_basic_authenticate_with name: "admin", password: "supersecure", except: [:index]
    
     def index
+        surpriseAccount = ["reactjs", "rate_dog", "angular", "jk_rowling", "potus", "chrissyteigen", "SoCalEq", "MongoDB", "gem", "nodejs", "github", "Jira", "JavaScript", "dan_abramov", "UCIrvine", "nytimes"]
+        randomNum = rand(0..15)
+        @surprise = surpriseAccount[randomNum]
     end
 
     def results 
