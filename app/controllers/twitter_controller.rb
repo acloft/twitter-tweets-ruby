@@ -9,7 +9,7 @@ class TwitterController < ApplicationController
     end
 
     def results 
-        @handle = params[:search]
+        @handle = params[:search].sub(/@/, "").sub(/:/, "")
         if @handle && @handle.length > 0
             begin
                 @user = $twitter.user(@handle)
