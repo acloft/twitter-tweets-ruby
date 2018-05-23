@@ -3,7 +3,8 @@
 
 
 class TwitterController < ApplicationController
-    http_basic_authenticate_with name: "admin", password: "supersecure", except: [:index]
+
+    http_basic_authenticate_with name: ENV["USERNAME"], password: ENV["PASSWORD"], except: [:index]
    
     def index
         surpriseAccount = ["reactjs", "rate_dog", "angular", "jk_rowling", "potus", "chrissyteigen", "SoCalEq", "MongoDB", "gem", "nodejs", "github", "Jira", "JavaScript", "dan_abramov", "UCIrvine", "nytimes"]
