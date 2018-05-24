@@ -8,7 +8,7 @@ class TwitterController < ApplicationController
    
     def index
         surpriseAccount = ["reactjs", "rate_dog", "angular", "jk_rowling", "potus", "chrissyteigen", "SoCalEq", "MongoDB", "gem", "nodejs", "github", "Jira", "JavaScript", "dan_abramov", "UCIrvine", "nytimes", "lodgebreadco"]
-        randomNum = rand(0..15)
+        randomNum = rand(0..surpriseAccount.length)
         @surprise = surpriseAccount[randomNum]
     end
 
