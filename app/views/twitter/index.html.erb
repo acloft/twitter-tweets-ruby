@@ -4,7 +4,7 @@
   </div>
   <div class="col-sm-6 col-sm-offset-3 text-center">
     <%= form_tag("results", method: "get",  :class => "form-inline") do %>
-      <%= text_field_tag(:search, "", {:class => 'form-control', :required=> true})%>
+      <%= text_field_tag(:search, "", {:class => 'form-control', :required=> true, :placeholder => '@'})%>
       <%= submit_tag("Search", {:class => 'btn btn-primary'}) %>
     <% end %>
     <%= link_to 'Surprise Me!', {:controller => "twitter", :action => "results", :search   => @surprise}, {:class => 'btn'} %> 
