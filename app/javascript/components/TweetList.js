@@ -4,45 +4,30 @@ class TweetList extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.props.tweets && this.props.tweets.length > 0 ? (
-          <div>
-            <TweetListItem />
-            <h2>
-              {" "}
-              <a
-                target="_blank"
-                href={`https://twitter.com/${this.props.handle}`}
-              >
-                @{this.props.handle}
-              </a>'s recent tweets:{" "}
-            </h2>
-            <div className="text-right">
-              <a href="/"> New Search</a>
-            </div>
-            <ol className="list-group">
-              {this.props.tweets && this.props.tweets.length > 0
-                ? this.props.tweets.map(tweet => (
-                    <TweetListItem
-                      tweet={tweet}
-                      key={`list-item${tweet.id}` || "none"}
-                    />
-                  ))
-                : null}
-            </ol>
+        <div>
+          <h2>
+            {" "}
+            <a
+              target="_blank"
+              href={`https://twitter.com/${this.props.handle}`}
+            >
+              @{this.props.handle}
+            </a>'s recent tweets:{" "}
+          </h2>
+          <div className="text-right">
+            <a href="/"> New Search</a>
           </div>
-        ) : (
-          <React.Fragment>
-            <div className="text-center">
-              That was no good. Want to try a different search?{" "}
-              <div className="text-center">
-                <a className="btn btn-warning" href="/">
-                  {" "}
-                  New Search
-                </a>
-              </div>
-            </div>
-          </React.Fragment>
-        )}
+          <ol className="list-group">
+            {this.props.tweets && this.props.tweets.length > 0
+              ? this.props.tweets.map(tweet => (
+                  <TweetListItem
+                    tweet={tweet}
+                    key={`list-item${tweet.id}` || "none"}
+                  />
+                ))
+              : null}
+          </ol>
+        </div>
       </React.Fragment>
     );
   }
