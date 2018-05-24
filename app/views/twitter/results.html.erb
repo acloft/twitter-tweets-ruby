@@ -1,8 +1,24 @@
-<% if @tweets %>
+<% if @tweets && @tweets.length>0 %>
 <%= react_component('TweetList',{:tweets=> @tweets, :handle => @handle, :user=> @user})%>
 <% else %>
-<div class="row text-center">
-<p class="text-center"> Looks like that didn't work, would you like to go back and try again?</p>
- <%= link_to 'New Search', twitter_index_url  %> </div>
+    <% if @user %>
+        <% if @user#protected %>
+        <div class="row text-center"> 
+            <p class="text-center">Sorry, it looks like @<%= @user.screen_name%> is a protected account! Please try another handle.  </p>
+            <%= link_to 'New Search', '/'  %> 
+        </div>
+        <% else %>
+        <div class="row text-center"> 
+            <p class="text-center"> Sorry, it looks like @<%= @user.screen_name%> doesn't have any tweets Please try another handle.  </p>
+            <%= link_to 'New Search', '/'  %> 
+        </div>
+        <% end %>
+        
+    <%else %>
+        <div class="row text-center">
+            <p class="text-center"> Sorry, I couldn't find any users with the name @<%= @handle%>, would you like to go back and try again?</p>
+            <%= link_to 'New Search', '/'  %> 
+        </div>
+    <% end%>
 <% end %>
 
